@@ -2,6 +2,7 @@
     --background-color: #a3a1f8;
     --bg-gradient: #e7eff8;
     --bg-bar: #3949AB;
+    --bg-color2: #2c3ca5;
     --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.075), 0 8px 10px -6px rgba(0, 0, 0, 0.075);
     --text: #616161;
     --text2: #414447;
@@ -9,10 +10,11 @@
 
 body {
     display: block;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     background: var(--bg-gradient);
 }
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -20,23 +22,47 @@ ul {
 }
 
 li {
+    list-style: none;
     margin-bottom: 15px;
 }
-input{
+
+input:not([type="radio"]) {
     width: 100%;
-    border-radius: 4px;
-    height: 30px;
-    border: 2px solid #dfdbf5
+    border-radius: 8px;
+    height: 40px;
+    border: 2px solid #dfdbf5;
 }
-h2,h3{
+
+h2,
+h3 {
     text-transform: uppercase;
 }
-select{
+
+select {
     border: 1px solid #dfdbf5;
     background: white;
     height: 30px;
     text-align: right;
+    border-radius: 8px;
     color: var(--text);
+}
+
+button {
+    margin-top: 10px;
+    width: 100%;
+    background: var(--bg-bar);
+    color: white;
+    font-weight: 600;
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #dfdbf5;
+    cursor: pointer;
+    list-style: none;
+    box-shadow: var(--shadow);
+}
+
+button:hover {
+    background: var(--bg-color2);
 }
 
 .top-bar {
@@ -51,39 +77,80 @@ select{
 }
 
 .container-receipt {
+    display: flex;
     gap: 8px;
-    margin-top: 3%;
-    margin-left: 2%;
-    text-align:left;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
     width: 30%;
     max-width: 450px;
     border: 1px solid #dfdbf5;
     border-radius: 14px;
     padding: 20px;
     color: var(--text);
-    background:white;
+    background: white;
     box-shadow: var(--shadow);
 }
 
-.total-calculated{
+.total-calculated {
     max-width: 100%;
     border: 1px solid #dfdbf5;
-    padding: 10px 15px;
+    padding: 10px;
+    border-radius: 8px;
     text-align: right;
+    box-shadow: var(--shadow);
 }
-.price-calculated{
+
+.price-calculated {
     padding: 2px;
     color: var(--bg-bar);
     font-size: large;
     font-weight: 600;
 }
-.container-price-quantity{
+
+.container-price-quantity {
     display: flex;
     gap: 20px;
     align-items: flex-end;
 }
-.quantity-price-group{
+
+.quantity-price-group {
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+.strucure-options {
+    text-align: start;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.radio-hidden {
+    display: none;
+}
+
+.option-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid #dfdbf5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text);
+    background: white;
+}
+
+.option-card:hover {
+    background-color: #f8f9fa;
+}
+
+.radio-hidden:checked+.option-card {
+    border-color: #19ad0c;
+    background-color: #f3fff2;
+    color: #32a703;
 }

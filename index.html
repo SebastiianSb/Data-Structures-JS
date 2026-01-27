@@ -19,19 +19,19 @@
             <h2>Invoice Registration</h2>
             <div>
                 <li>
-                <label for="username">Full Name</label>
-                <input required type="text" id="username-input" placeholder="Example: Sebastian Andrade" required>
+                    <label for="username">Full Name</label>
+                    <input required type="text" id="username-input" placeholder="Example: Sebastian Andrade" required>
                 </li>
             </div>
             <div>
                 <li>
-                <label for="concept">Concept</label>
-                <select name="select-concept" id="concept">
-                    <option value="Water Bill">Watter Bill</option>
-                    <option value="Electricity Bill">Electricity Bill</option>
-                    <option value="Gas Bill">Gas Bill</option>
-                    <option value="Fiber Optic Internet Bill">Fiber Optic Internet Bill</option>
-                </select>
+                    <label for="concept">Concept:</label>
+                    <select name="select-concept" id="concept">
+                        <option value="Water Bill">Watter Bill</option>
+                        <option value="Electricity Bill">Electricity Bill</option>
+                        <option value="Gas Bill">Gas Bill</option>
+                        <option value="Fiber Optic Internet Bill">Fiber Optic Internet Bill</option>
+                    </select>
                 </li>
             </div>
             <div class="container-price-quantity">
@@ -56,31 +56,34 @@
                     </div>
                 </li>
             </div>
+            <h3>Chose Structure:</h3>
             <div class="strucure-options">
-                <h3>Chose Structure:</h3>
-                    <li>
-                        <input type="radio" name="data-structure" id="struct-stack" class="radio-hidden">
-                        <label for="struct-stack" class="option-card">
+                <li>
+                    <input type="radio" name="data-structure" id="struct-stack" class="radio-hidden">
+                    <label for="struct-stack" class="option-card">
                         <span>Stack</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="data-structure" id="struct-queue" class="radio-hidden">
-                        <label for="struct-queue" class="option-card">
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="data-structure" id="struct-queue" class="radio-hidden">
+                    <label for="struct-queue" class="option-card">
                         <span>Queue</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" name="data-structure" id="struct-list" class="radio-hidden">
-                        <label for="struct-list" class="option-card">
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="data-structure" id="struct-list" class="radio-hidden">
+                    <label for="struct-list" class="option-card">
                         <span>List</span>
-                        </label>
-                    </li>
-                    <li>
-                        <button class="btn-register">Register Receipt</button>
-                    </li>
-                </ul>
+                    </label>
+                </li>
             </div>
+            <li>
+                <div class="button">
+                    <button type="button" id="btn-register">Register Receipt</button>
+                </div>
+            </li>
+        </ul>
     </div>
 </body>
+
 </html>
