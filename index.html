@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top-bar">
+        <nav aria-label="Principal Navigation">
+            <label for="top-bar-tittle">Data Structures - Receipt Billing</label>
+        </nav>
+    </header>
+    <div class="container-receipt">
+        <ul>
+            <h2>Invoice Registration</h2>
+            <div>
+                <li>
+                <label for="username">Full Name</label>
+                <input required type="text" id="username-input" placeholder="Example: Sebastian Andrade" required>
+                </li>
+            </div>
+            <div>
+                <li>
+                <label for="concept">Concept</label>
+                <select name="select-concept" id="concept">
+                    <option value="Water Bill">Watter Bill</option>
+                    <option value="Electricity Bill">Electricity Bill</option>
+                    <option value="Gas Bill">Gas Bill</option>
+                    <option value="Fiber Optic Internet Bill">Fiber Optic Internet Bill</option>
+                </select>
+                </li>
+            </div>
+            <div class="container-price-quantity">
+                <div class="quantity-price-group">
+                    <li>
+                        <label for="amount">Quantity</label>
+                        <input required type="number" id="quantity-input" value="1" min="1">
+                    </li>
+                </div>
+                <div class="quantity-price-group">
+                    <li>
+                        <label for="price">Unit Price ($)</label>
+                        <input required type="number" id="price-input" min="0">
+                    </li>
+                </div>
+            </div>
+            <div>
+                <li>
+                    <div class="total-calculated">
+                        <span class="total-sapn">Total Calculated:</span>
+                        <div class="price-calculated">0.00</div>
+                    </div>
+                </li>
+            </div>
+            <div class="strucure-options">
+                <h3>Chose Structure:</h3>
+                    <li>
+                        <input type="radio" name="data-structure" id="struct-stack" class="radio-hidden">
+                        <label for="struct-stack" class="option-card">
+                        <span>Stack</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="data-structure" id="struct-queue" class="radio-hidden">
+                        <label for="struct-queue" class="option-card">
+                        <span>Queue</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="data-structure" id="struct-list" class="radio-hidden">
+                        <label for="struct-list" class="option-card">
+                        <span>List</span>
+                        </label>
+                    </li>
+                    <li>
+                        <button class="btn-register">Register Receipt</button>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</body>
+</html>
