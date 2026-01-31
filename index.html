@@ -14,76 +14,166 @@
             <label for="top-bar-tittle">Data Structures - Receipt Billing</label>
         </nav>
     </header>
-    <div class="container-receipt">
-        <ul>
-            <h2>Invoice Registration</h2>
-            <div>
-                <li>
-                    <label for="username">Full Name</label>
-                    <input required type="text" id="username-input" placeholder="Example: Sebastian Andrade" required>
-                </li>
-            </div>
-            <div>
-                <li>
-                    <label for="concept">Concept:</label>
-                    <select name="select-concept" id="concept">
-                        <option value="Water Bill">Watter Bill</option>
-                        <option value="Electricity Bill">Electricity Bill</option>
-                        <option value="Gas Bill">Gas Bill</option>
-                        <option value="Fiber Optic Internet Bill">Fiber Optic Internet Bill</option>
-                    </select>
-                </li>
-            </div>
-            <div class="container-price-quantity">
-                <div class="quantity-price-group">
+    <div class="main-layout">
+        <div class="container-receipt">
+            <ul>
+                <h2>Invoice Registration</h2>
+                <div>
                     <li>
-                        <label for="amount">Quantity</label>
-                        <input required type="number" id="quantity-input" value="1" min="1">
+                        <label for="username">Full Name</label>
+                        <input required type="text" id="username-input" placeholder="Example: Sebastian Andrade"
+                            required>
                     </li>
                 </div>
-                <div class="quantity-price-group">
+                <div>
                     <li>
-                        <label for="price">Unit Price ($)</label>
-                        <input required type="number" id="price-input" min="0">
+                        <label for="concept">Concept:</label>
+                        <select name="select-concept" id="concept">
+                            <option value="Water Bill">Watter Bill</option>
+                            <option value="Electricity Bill">Electricity Bill</option>
+                            <option value="Gas Bill">Gas Bill</option>
+                            <option value="Fiber Optic Internet Bill">Fiber Optic Internet Bill</option>
+                            <option value="Mobile Data Bill">Mobile Data Bill</option>
+                            <option value="Streaming Service Bill">Streaming Service Bill</option>
+                            <option value="App Subscription">App Subscription</option>
+                            <option value="Donation">Donation</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </li>
                 </div>
-            </div>
-            <div>
+                <div class="container-price-quantity">
+                    <div class="quantity-price-group">
+                        <li>
+                            <label for="amount">Quantity</label>
+                            <input required type="number" id="quantity-input" value="1" min="1">
+                        </li>
+                    </div>
+                    <div class="quantity-price-group">
+                        <li>
+                            <label for="price">Unit Price ($)</label>
+                            <input required type="number" id="price-input" min="0">
+                        </li>
+                    </div>
+                </div>
+                <div>
+                    <li>
+                        <div class="total-calculated">
+                            <span class="total-sapn">Total Calculated:</span>
+                            <div class="price-calculated" id="price-calculated-label">0.00</div>
+                        </div>
+                    </li>
+                </div>
+                <h3>Chose Structure:</h3>
+                <div class="strucure-options">
+                    <li>
+                        <input type="radio" name="data-structure" id="struct-stack" class="radio-hidden">
+                        <label for="struct-stack" class="option-card">
+                            <span>Stack</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="data-structure" id="struct-queue" class="radio-hidden">
+                        <label for="struct-queue" class="option-card">
+                            <span>Queue</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="data-structure" id="struct-list" class="radio-hidden">
+                        <label for="struct-list" class="option-card">
+                            <span>List</span>
+                        </label>
+                    </li>
+                </div>
                 <li>
-                    <div class="total-calculated">
-                        <span class="total-sapn">Total Calculated:</span>
-                        <div class="price-calculated">0.00</div>
+                    <div class="button">
+                        <button type="button" id="btn-register">Register Receipt</button>
                     </div>
                 </li>
-            </div>
-            <h3>Chose Structure:</h3>
-            <div class="strucure-options">
-                <li>
-                    <input type="radio" name="data-structure" id="struct-stack" class="radio-hidden">
-                    <label for="struct-stack" class="option-card">
-                        <span>Stack</span>
-                    </label>
-                </li>
-                <li>
-                    <input type="radio" name="data-structure" id="struct-queue" class="radio-hidden">
-                    <label for="struct-queue" class="option-card">
-                        <span>Queue</span>
-                    </label>
-                </li>
-                <li>
-                    <input type="radio" name="data-structure" id="struct-list" class="radio-hidden">
-                    <label for="struct-list" class="option-card">
-                        <span>List</span>
-                    </label>
-                </li>
-            </div>
-            <li>
-                <div class="button">
-                    <button type="button" id="btn-register">Register Receipt</button>
+            </ul>
+        </div>
+        <div class="results-layout">
+            <div class="stack-section">
+                <div class="stack-header">
+                    <h3 class="stack-title">Stack</h3>
+                    <span class="stack-badge">They are stacked on top of each other [LIFO]</span>
                 </div>
-            </li>
-        </ul>
+                <div class="stack-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th class="col-id">ID</th>
+                                <th>Client</th>
+                                <th>Concept</th>
+                                <th class="col-quantity">Quantity</th>
+                                <th class="col-price">Price</th>
+                                <th class="col-total">Total</th>
+                                <th class="col-hour">Hour</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stack-table-body">
+                            <tr id="stack-empty-row">
+                                <td colspan="7" class="empty-message">No receipts registered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="queue-section">
+                <div class="queue-header">
+                    <h3 class="queue-title">Queue</h3>
+                    <span class="queue-badge">From top to bottom.</span>
+                </div>
+                <div class="queue-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th class="col-id">ID</th>
+                                <th>Client</th>
+                                <th>Concept</th>
+                                <th class="col-quantity">Quantity</th>
+                                <th class="col-price">Price</th>
+                                <th class="col-total">Total</th>
+                                <th class="col-hour">Hour</th>
+                            </tr>
+                        </thead>
+                        <tbody id="queue-table-body">
+                            <tr id="queue-empty-row">
+                                <td colspan="7" class="empty-message">No receipts registered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="list-section">
+                <div class="list-header">
+                    <h3 class="list-title">List</h3>
+                    <span class="list-badge">Connected nodes.</span>
+                </div>
+                <div class="list-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th class="col-id">ID</th>
+                                
+                                <th>Client</th>
+                                <th>Concept</th>
+                                <th class="col-quantity">Quantity</th>
+                                <th class="col-price">Price</th>
+                                <th class="col-total">Total</th>
+                                <th class="col-hour">Hour</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list-table-body">
+                            <tr id="list-empty-row">
+                                <td colspan="7" class="empty-message">No receipts registered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
