@@ -6,7 +6,7 @@ const unitPriceInput = document.getElementById('price-input')
 const totalCalculated = document.getElementById('price-calculated-label')
 
 const stackBody = document.getElementById('stack-table-body')
-const queueBody = document.getElementById('queue-table-boby')
+const queueBody = document.getElementById('queue-table-body')
 const listBody = document.getElementById('list-table-body')
 
 const btnRegisterReceipt = document.getElementById('btn-register')
@@ -24,8 +24,8 @@ let idCounter = 0
 btnRegisterReceipt.addEventListener('click', function(){
 
     const selectorStack = document.querySelector('input[id="struct-stack"]:checked')
-    const selectorQueue = document.querySelector('input[id="struct-queue]:checked')
-    const selectorList = document.querySelector('input[id="struct-list]:checked')
+    const selectorQueue = document.querySelector('input[id="struct-queue"]:checked')
+    const selectorList = document.querySelector('input[id="struct-list"]:checked')
 
     idCounter++
     if(selectorStack){
@@ -120,7 +120,7 @@ class Queue {
                 <td>${objQueue.total}</td>
             </tr>
             `
-        queueBody.insertAdjacentElement('beforeend', queuePrint)
+            queueBody.insertAdjacentHTML('beforebegin', queuePrint)
         })
     }
 }
