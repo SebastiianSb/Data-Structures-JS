@@ -61,6 +61,57 @@ button {
     box-shadow: var(--shadow);
 }
 
+.button-stack button{
+    margin-top: 10px;
+    width: 20%;
+    background: var(--bg-bar);
+    color: white;
+    font-weight: 600;
+    height: 30px;
+    border-radius: 12px;
+    border: 2px solid #dfdbf5;
+    cursor: pointer;
+    list-style: none;
+    box-shadow: var(--shadow);
+}
+.button-queue button {
+    margin-top: 10px;
+    width: 20%;
+    background: var(--bg-bar);
+    color: white;
+    font-weight: 600;
+    height: 30px;
+    background: #19ad0c;
+    border-radius: 12px;
+    border: 2px solid #dfdbf5;
+    cursor: pointer;
+    list-style: none;
+    box-shadow: var(--shadow);
+
+}
+.button-queue button:hover{
+    background: #1f8b15;
+}
+.button-list button{
+
+    margin-top: 10px;
+    width: 20%;
+    background: var(--bg-bar);
+    color: white;
+    font-weight: 600;
+    height: 30px;
+    background: #c79815;
+    border-radius: 12px;
+    border: 2px solid #dfdbf5;
+    cursor: pointer;
+    list-style: none;
+    box-shadow: var(--shadow);
+
+}
+.button-list button:hover{
+    background: #a5811d;
+}
+
 button:hover {
     background: var(--bg-color2);
 }
@@ -286,7 +337,7 @@ td {
 .list-title {
     font-size: 1.125rem;
     font-weight: 700;
-    color: #a38430;
+    color: #c79815;
     margin: 0;
     display: flex;
     align-items: center;

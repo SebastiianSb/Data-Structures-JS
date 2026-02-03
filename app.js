@@ -10,6 +10,7 @@ const queueBody = document.getElementById('queue-table-body')
 const listBody = document.getElementById('list-table-body')
 
 const btnRegisterReceipt = document.getElementById('btn-register')
+const btnDeleteStack = document.getElementById('btn-delete-stack')
 
 
 unitPriceInput.addEventListener('input', function(){
@@ -27,19 +28,30 @@ btnRegisterReceipt.addEventListener('click', function(){
     const selectorQueue = document.querySelector('input[id="struct-queue"]:checked')
     const selectorList = document.querySelector('input[id="struct-list"]:checked')
 
-    idCounter++
+    if(usernameInput.value == '' || unitPriceInput.value == ''){
+
+        alert('Any fill is empty')
+        return
+
+    }else{
+        idCounter++
     if(selectorStack){
         news.stack(idCounter,usernameInput.value,conceptInput.value,quantityInput.value,unitPriceInput.value,sumInvoices(unitPriceInput.value,quantityInput.value))
         news.printStack()
+        return
     }
     if(selectorQueue){
         newq.enqueue(idCounter,usernameInput.value,conceptInput.value,quantityInput.value,unitPriceInput.value,sumInvoices(unitPriceInput.value,quantityInput.value))
         newq.printQueue()
+        return
     }
     if(selectorList){
 
+        
+    }
     }
 })
+
 
 function sumInvoices(uPrice,quantityIn){
 
@@ -120,7 +132,7 @@ class Queue {
                 <td>${objQueue.total}</td>
             </tr>
             `
-            queueBody.insertAdjacentHTML('beforebegin', queuePrint)
+            queueBody.insertAdjacentHTML('beforeend', queuePrint)
         })
     }
 }
