@@ -11,6 +11,7 @@ const listBody = document.getElementById('list-table-body')
 
 const btnRegisterReceipt = document.getElementById('btn-register')
 const btnDeleteStack = document.getElementById('btn-delete-stack')
+const btnDeleteQueue = document.getElementById('btn-delete-queue')
 
 
 unitPriceInput.addEventListener('input', function(){
@@ -21,6 +22,15 @@ unitPriceInput.addEventListener('input', function(){
 })
 
 let idCounter = 0
+
+btnDeleteStack.addEventListener('click', ()=>{
+    news.unstack()
+    return
+})
+btnDeleteQueue.addEventListener('click', ()=>{
+    newq.dequeue()
+    return
+})
 
 btnRegisterReceipt.addEventListener('click', function(){
 
@@ -35,20 +45,20 @@ btnRegisterReceipt.addEventListener('click', function(){
 
     }else{
         idCounter++
-    if(selectorStack){
-        news.stack(idCounter,usernameInput.value,conceptInput.value,quantityInput.value,unitPriceInput.value,sumInvoices(unitPriceInput.value,quantityInput.value))
-        news.printStack()
-        return
-    }
-    if(selectorQueue){
-        newq.enqueue(idCounter,usernameInput.value,conceptInput.value,quantityInput.value,unitPriceInput.value,sumInvoices(unitPriceInput.value,quantityInput.value))
-        newq.printQueue()
-        return
-    }
-    if(selectorList){
+        if(selectorStack){
+            news.stack(idCounter,usernameInput.value,conceptInput.value,quantityInput.value,unitPriceInput.value,sumInvoices(unitPriceInput.value,quantityInput.value))
+            news.printStack()
+            return
+        }
+        if(selectorQueue){
+            newq.enqueue(idCounter,usernameInput.value,conceptInput.value,quantityInput.value,unitPriceInput.value,sumInvoices(unitPriceInput.value,quantityInput.value))
+            newq.printQueue()
+            return
+        }
+        if(selectorList){
 
         
-    }
+        }
     }
 })
 
@@ -76,8 +86,9 @@ class Stack{
 
         this.newStack.push(objStack)
     }
-    unstack(objStack){
-        this.newStack.pop(objStack)
+    unstack(){
+        stackBody.deleteRow(0)
+        this.newStack.pop()
     }
     printStack(){
         stackBody.textContent = ''
@@ -113,10 +124,12 @@ class Queue {
             price: e5,
             total: e6
         }
+
         this.newQueue.push(objQueue)
     }
     dequeue(){
-        this.newQueue.shift(objQueue)
+        queueBody.deleteRow(0)        
+        this.newQueue.shift();
     }
     printQueue(){
         queueBody.textContent = ''
